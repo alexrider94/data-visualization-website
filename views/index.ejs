@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mongo-express</title>
+    <meta charset="utf-8" />
+    <link href="/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <a href="/"><img class="logo" src="logo.png" height="100px"></a>
+    <div class="contents">
+      <h1 class="title1">Cheongju Travel Helper</h1>
+      <br><br>
+      <center>
+          <img class="main" src="main.png" width="700px">
+      </center>
+      <br><br><br><br><br>
+      <b>
+        If you do not have any knowledge of Cheongju, click this
+        <input type="button" value="Play Keyword" onclick="WC_movepage()"/><br><br>
+        <br>
+        Keyword ranking based on the likes of Instagram!
+        <input type="button" value="Ranking by likes" onclick="RK_movepage()"/><br>
+        <br><br>
+        Let's take a look at <input type="button" value="PieChart by likes" onclick="CT_movepage()"/> that you can do in CheongJu!
+        <br><br><br>
+        What will CheongJu people do in
+        <input type="button" value="Spring" onclick="SP_movepage()"/>,
+        <input type="button" value="Summer" onclick="SM_movepage()"/>,
+        <input type="button" value="Autumn" onclick="AT_movepage()"/> and
+        <input type="button" value="Winter" onclick="WT_movepage()"/> ?<br><br><br>
+        What is the purpose of your trip? Choose from
+        <input type="button" value="Dating" onclick="DT_movepage()"/>,
+        <input type="button" value="Cafe" onclick="CF_movepage()"/> and
+        <input type="button" value="Good Restaurant" onclick="DK_movepage()"/>
+      </br>
+  	<script type="text/javascript">
+  		function WC_movepage(){
+  			location.href="/hello";
+  		}
+      function RK_movepage(){
+        location.href="/ranking";
+      }
+      function CT_movepage(){
+        location.href="/gchart";
+      }
+      function SM_movepage(){
+        location.href="/summer";
+      }
+      function WT_movepage(){
+        location.href="/winter";
+      }
+      function AT_movepage(){
+        location.href="/autumn";
+      }
+      function SP_movepage(){
+        location.href="/spring";
+      }
+      function DT_movepage(){
+        location.href="/dating";
+      }
+      function CF_movepage(){
+        location.href="/cafe";
+      }
+      function DK_movepage(){
+        location.href="/drinking";
+      }
+  	</script>
+  </div>
+  <div class="whiteback"></div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  </head>
+  <body>
+    <a href="/"><img class="logo" src="logo.png" height="100px"></a>
+    <div class="contents">
+      <h1 class="title1">Play Keyword</h1>
+      <%
+      var test = [];
+      var arr = [];
+      var obj = {};
+      var ele = [];
+      %>
+      <p class="title2">Plan your trip with CheongJu's keywords with wordcloud!</p>
+
+      <%
+      for(var i = 0; i < list.length; i++){
+        for(var j in list[i].hashtags)
+          test.push(list[i].hashtags[j])
+      }
+      //console.log(test)
+      arr = test.reduce(function(x,y){
+        x[y] = ++x[y]|| 1;
+        return x;
+      },{});
+
+      for(var x = 0; x < Object.keys(arr).length; x++){
+        var obj = {};
+        obj.text = Object.keys(arr)[x];
+        //console.log(Object.keys(arr)[x]);
+        obj.count = Object.values(arr)[x];
+        ele.push(obj);
+        //console.log(x);
+      }
+
+      //console.log(ele);
+      %>
+      <center>
+        <br><br><br><br><br><br><br><br><br><br>
+      <div id="myChart"></div>
+      </center>
+
+     <script>
+        ZC.LICENSE = ["b55b025e438fa8a98e32482b5f768ff5"];
+        var myConfig = {
+            type: 'wordcloud',
+            options: {
+                words: <%-JSON.stringify(ele) %>
+            }
+        };
+
+        zingchart.render({
+            id: 'myChart',
+            data: myConfig,
+            height: 400,
+            width: '60%'
+        });
+      </script>
+    </div>
+    <div class="whiteback"><img class="cloud" src="cloud.png" width="1700" height="1100"></div>
+  </body>
+</html>

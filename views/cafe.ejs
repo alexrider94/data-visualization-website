@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  </head>
+  <body>
+<a href="/"><img class="logo" src="logo.png" height="100px"></a>
+    <div class="contents">
+    <h1 class="title1">Cafe</h1>
+    <%
+    var test = [];
+    var arr = [];
+    var obj = {};
+    var ele = [];
+     %>
+    <h1 style = "text-align:center">WordCloud for Cafe</h1>
+    <%
+    for(var x = 0; x < list.length; x++){
+      var obj = {};
+      obj.text = list[x].hashtags[2];
+      obj.count = list[x].likes;
+      ele.push(obj);
+    }
+   %>
+   <center>
+     <br><br><br><br><br><br><br><br><br><br>
+     <div id="myChart"></div>
+    </center>
+     <script>
+    ZC.LICENSE = ["b55b025e438fa8a98e32482b5f768ff5"];
+    var myConfig = {
+        type: 'wordcloud',
+        options: {
+            words: <%-JSON.stringify(ele) %>
+        }
+    };
+
+    zingchart.render({
+        id: 'myChart',
+        data: myConfig,
+        height: 500,
+        width: '40%'
+    });
+</script>
+</div>
+<div class="whiteback"><img class="cloud" src="cloud.png" width="1700" height="1100"></div>
+  </body>
+</html>

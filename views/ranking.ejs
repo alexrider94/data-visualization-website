@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mongo-express</title>
+      <link href="/style.css" rel="stylesheet" type="text/css">
+      <link href="/bootstrap.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <a href="/"><img class="logo" src="logo.png" height="100px"></a>
+    <div class="contents">
+    <h1 class="title1">Ranking of keywords by likes</h1>
+    <p>let's find some good place by instargram data</p>
+      <script type="text/javascript">
+        function movepage(){
+          location.href="/";
+        }
+      </script>
+      </div>
+      <div class="whiteback">
+      <table class="table">
+      <tr style="background:#FF5E00; color:white">
+        <th>Rank</th>
+        <th>Likes</th>
+        <th>Hashtags</th>
+      </tr>
+      <% for(var i = 0; i < list.length; i++) {%>
+        <tr>
+            <td scope="col"> <%= i+1%></td>
+            <td style="background: #FAECC5"><%= list[i].likes %></td>
+            <td><%= list[i].hashtags %></td>
+        </tr>
+      <%
+      }
+      %>
+    </table>
+    </div>
+  </body>
+</html>
